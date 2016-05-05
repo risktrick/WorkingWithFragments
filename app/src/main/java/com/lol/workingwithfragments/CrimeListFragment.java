@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -40,7 +39,7 @@ public class CrimeListFragment extends ListFragment {
         Toast.makeText(getActivity(), "click " + position, Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(getActivity(), DetailsActivity.class);
-        intent.putExtra(FirstFragment.EXTRA_UUID, modelClicked.uuid);
+        intent.putExtra(DetailsFragment1.EXTRA_UUID, modelClicked.uuid);
         startActivity(intent);
     }
 

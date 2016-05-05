@@ -1,13 +1,17 @@
 package com.lol.workingwithfragments;
 
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+
+import java.util.UUID;
 
 public class DetailsActivity extends SingleFragmentActivity {
 
     @Override
     Fragment createFragment() {
-        return new FirstFragment();
+
+        UUID uuid = (UUID)getIntent().getSerializableExtra(DetailsFragment2.EXTRA_UUID);
+        return DetailsFragment2.newInstance(uuid);
+
+        //return new DetailsFragment1();
     }
 }

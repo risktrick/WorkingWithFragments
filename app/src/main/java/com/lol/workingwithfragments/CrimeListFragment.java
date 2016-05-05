@@ -2,6 +2,7 @@ package com.lol.workingwithfragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +35,13 @@ public class CrimeListFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        Log.e("aaa", "click " + position);
+        Model modelClicked = ((MyAdapter)getListAdapter()).getItem(position);
+
+        Toast.makeText(getActivity(), "click " + position, Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(getActivity(), DetailsActivity.class);
+        intent.putExtra(FirstFragment.EXTRA_UUID, modelClicked.uuid);
+        startActivity(intent);
     }
 
     private class MyAdapter extends ArrayAdapter<Model> {
@@ -51,7 +59,7 @@ public class CrimeListFragment extends ListFragment {
             Model model = getItem(position);
 
             TextView textView = (TextView)convertView.findViewById(R.id.textViewItem);
-            textView.setText(":) " + model.uuid);
+            textView.setText("uuid == " + model.uuid);
 
             return convertView;
         }

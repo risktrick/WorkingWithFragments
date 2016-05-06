@@ -8,6 +8,6 @@ public class MainActivity extends SingleFragmentActivity {
     @Override
     Fragment createFragment() {
         //return new DetailsFragment1();
-        return new CrimeListFragment();
+        return new ModelListFragment();
     }
 }

@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CrimeListFragment extends ListFragment {
+public class ModelListFragment extends ListFragment {
 
 
     @Override

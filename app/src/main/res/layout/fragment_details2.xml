@@ -8,6 +8,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="It is details fragment 2" />
+        android:text="It is details fragment 2"
+        android:id="@+id/textViewDetailsFragment2"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show dialog"
+        android:id="@+id/buttonShowDitailsDialog"
+        android:layout_gravity="center" />
 
 </FrameLayout>
